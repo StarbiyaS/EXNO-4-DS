@@ -24,6 +24,36 @@ The feature selection techniques used are:
 3.Embedded Method
 
 # CODING AND OUTPUT:
-       # INCLUDE YOUR CODING AND OUTPUT SCREENSHOTS HERE
+```
+import pandas as pd
+from scipy import stats
+import numpy as np
+df=pd.read_csv("/content/bmi.csv")
+df.head()
+```
+![image](https://github.com/user-attachments/assets/6b5cf5eb-dbae-426d-acc9-424c4bdb8db0)
+
+```
+df_null_sum=df.isnull().sum()
+df_null_sum
+```
+![image](https://github.com/user-attachments/assets/9e3ff961-2242-452d-a898-4d61f1f3f893)
+```
+df.dropna()
+```
+![image](https://github.com/user-attachments/assets/b47113f8-24c5-4a7e-928a-de04374ad106)
+```
+max_vals=np.max(np.abs(df[['Height','Weight']]),axis=0)
+max_vals
+```
+![image](https://github.com/user-attachments/assets/dcbd999a-aa0d-408c-b8a7-db78a2375ff7)
+```
+from sklearn.preprocessing import StandardScaler
+sc=StandardScaler()
+df[['Height','Weight']]=sc.fit_transform(df[['Height','Weight']])
+df.head(10)
+```
+![image](https://github.com/user-attachments/assets/ceef36e1-7d4e-4962-b2fc-a0e73905fac7)
+```
 # RESULT:
        # INCLUDE YOUR RESULT HERE
